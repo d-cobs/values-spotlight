@@ -69,10 +69,9 @@ async function mvGet(appId, secureToken, path, params = {}) {
 
   const res = await fetch(url.toString(), {
     headers: {
-      'appId':       appId,
-      'secureToken': secureToken,
-      'Content-Type': 'application/json',
-    },
+  'Authorization': `Bearer ${secureToken}`,
+  'Content-Type': 'application/json',
+},
   });
 
   if (!res.ok) {
